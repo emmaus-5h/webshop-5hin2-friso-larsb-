@@ -30,10 +30,14 @@ insert into products (name, description, code, price) values ('rum', 'Nam ultric
 
 CREATE TABLE revieuws (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
-  code VARCHAR(15),
-  name VARCHAR(255),
-  description TEXT,
-  price NUMERIC(10, 2)
+  product_id INTEGER,
+  revieuws
 );
 
-
+insert into revieuws (product_id, revieuws) values (1, 'nice');
+insert into revieuws (product_id, revieuws) values (2, 'basic');
+insert into revieuws (product_id, revieuws) values (3, 'romig');
+insert into revieuws (product_id, revieuws) values (1, 'lekker');
+insert into revieuws (product_id, revieuws) values (5, 'slecht');
+insert into revieuws (product_id, revieuws) values (6, 'goed');
+insert into revieuws (product_id, revieuws) values (4, "matig");
