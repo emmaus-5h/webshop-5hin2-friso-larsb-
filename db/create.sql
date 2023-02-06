@@ -35,7 +35,6 @@ insert into products (id, name, description, code, price) values (10, 'jenever',
 CREATE TABLE persons (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   name INTEGER,
-  persons_id INTEGER,
   persons
 );
 
@@ -55,7 +54,6 @@ CREATE TABLE revieuws (
   product_id INTEGER,
   persons_id INTEGER,
   revieuws
-  persons
 );
 
 insert into revieuws (product_id, persons_id, revieuws) values (1, 2, 'nice');
