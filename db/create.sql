@@ -98,20 +98,48 @@ insert into revieuws (product_id, persons_id, revieuws) values (7, 7, "god damn"
 insert into revieuws (product_id, persons_id, revieuws) values (2, 6, "amazing");
 
 
-CREATE TABLE soort (
+CREATE TABLE likeur (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   name VARCHAR (255),
   soort_drank TEXT
 );
 
-insert into soort (id, name, soort_drank) values (1, 'malibu', "cider");
-insert into soort (id, name, soort_drank) values (2, 'whiskey', "brandewijn");
-insert into soort (id, name, soort_drank) values (3, 'port', "gedestillerde drank");
-insert into soort (id, name, soort_drank) values (4, 'cognac', "likeur");
-insert into soort (id, name, soort_drank) values (5, 'calvados', 'brandewijn') ;
-insert into soort (id, name, soort_drank) values (6, 'rum', "suiker drank");
-insert into soort (id, name, soort_drank) values (7, 'ouzo', "likeur");
-insert into soort (id, name, soort_drank) values (8, 'gin', "gedestillerde drank");
-insert into soort (id, name, soort_drank) values (9, 'limoncello', "likeur");
-insert into soort (id, name, soort_drank) values (10, 'jenever', "gedestillerde drank");
+insert into likeur (id, name, soort_drank) values (4, 'cognac', "likeur");
+insert into likeur (id, name, soort_drank) values (7, 'ouzo', "likeur");
+insert into likeur (id, name, soort_drank) values (9, 'limoncello', "likeur");
 
+
+CREATE TABLE gedestillerde_drank (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  name VARCHAR (255),
+  soort_drank TEXT
+);
+
+insert into gedestillerde_drank (id, name, soort_drank) values (3, 'port', "gedestillerde drank");
+insert into gedestillerde_drank (id, name, soort_drank) values (8, 'gin', "gedestillerde drank");
+insert into gedestillerde_drank (id, name, soort_drank) values (10, 'jenever', "gedestillerde drank");
+
+CREATE TABLE cider (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  name VARCHAR (255),
+  soort_drank TEXT
+);
+
+insert into cider (id, name, soort_drank) values (1, 'malibu', "cider");
+
+CREATE TABLE brandewijn (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  name VARCHAR (255),
+  soort_drank TEXT
+);
+
+insert into brandewijn (id, name, soort_drank) values (2, 'whiskey', "brandewijn");
+insert into brandewijn (id, name, soort_drank) values (5, 'calvados', 'brandewijn') ;
+
+CREATE TABLE suiker_drank (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  name VARCHAR (255),
+  soort_drank TEXT
+);
+
+insert into suiker_drank (id, name, soort_drank) values (6, "rum", "suiker drank")
