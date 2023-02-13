@@ -96,3 +96,22 @@ insert into revieuws (product_id, persons_id, revieuws) values (3, 9, 'top');
 insert into revieuws (product_id, persons_id, revieuws) values (10, 8, "pretty");
 insert into revieuws (product_id, persons_id, revieuws) values (7, 7, "god damn");
 insert into revieuws (product_id, persons_id, revieuws) values (2, 6, "amazing");
+
+
+CREATE TABLE soort (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  name VARCHAR (255),
+  soort_drank TEXT
+);
+
+insert into soort (id, name, soort_drank) values (1, 'malibu', "cider");
+insert into soort (id, name, soort_drank) values (2, 'whiskey', "brandewijn");
+insert into soort (id, name, soort_drank) values (3, 'port', "gedestillerde drank");
+insert into soort (id, name, soort_drank) values (4, 'cognac', "likeur");
+insert into soort (id, name, soort_drank) values (5, 'calvados', 'brandewijn') ;
+insert into soort (id, name, soort_drank) values (6, 'rum', "suiker drank");
+insert into soort (id, name, soort_drank) values (7, 'ouzo', "likeur");
+insert into soort (id, name, soort_drank) values (8, 'gin', "gedestillerde drank");
+insert into soort (id, name, soort_drank) values (9, 'limoncello', "likeur");
+insert into soort (id, name, soort_drank) values (10, 'jenever', "gedestillerde drank");
+
