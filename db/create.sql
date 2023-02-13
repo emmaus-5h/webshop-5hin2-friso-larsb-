@@ -8,7 +8,8 @@ CREATE TABLE products (
   code VARCHAR (15),
   name VARCHAR (255),
   description TEXT,
-  price NUMERIC (10,2)
+  price NUMERIC (10,2),
+  soort_id INTEGER
 );
 
 
@@ -21,21 +22,20 @@ CREATE TABLE products (
 -- want different data? check: https://www.mockaroo.com/910b6c20
 --
 
-insert into products (id, name, description, code, price) values (1, 'malibu', 'Malibu is een kokosdrank waaraan suikerriet melasse is toegevoegd', '816905633-0', 10.5);
-insert into products (id, name, description, code, price) values (2, 'whiskey', 'Whiskey is een gedistilleerd bier zonder hop, het heeft een smaak van geroosterd hout of karamel', '077030122-3', 11);
-insert into products (id, name, description, code, price) values (3, 'port', 'Port is een zoete en versterkte wijn uit portugal, en het komt in verscillende smaken zoals: frambozen, bramen, karamel, etc.', '445924201-X', 13.5);
-insert into products (id, name, description, code, price) values (4, 'cognac', 'Cognac wordt gemaakt uit witte wijn en komt met verschillende smaken. Het kan droog, zoet, kruidig, fruitig en bitter zijn', '693155505-7', 13.5);
-insert into products (id, name, description, code, price) values (5, 'calvados', 'Door het destilleren van appelcider ontstaat calvados. Het smaakt naar appels of peren', '686928463-6', 14);
-insert into products (id, name, description, code, price) values (6, 'rum', 'Rum is een sterke drank die ontstaat uit melasse of suikerrietsiroop. Het heeft een zoete smaak afhankelijk welke soort je koopt', '492662523-7', 14);
-insert into products (id, name, description, code, price) values (7, 'ouzo', 'Ouzo heeft een sterke mix van heerlijke vruchten met kruiden en noten. Het heeft een anijssmaak met druivenresten onderop', '816905633-0', 10.5);
-insert into products (id, name, description, code, price) values (8, 'gin', 'Gin is een gedestilleerde drank die afstamt van jenever. Het smaakt naar jeneverbes, dennennaalden en citroen, meestal is het zoet', '077030122-3', 11);
-insert into products (id, name, description, code, price) values (9, 'limoncello', 'Limoncello is een italiaanse drank en wordt gemaakt met citroen. Het is fris, zuur en zoet en heeft geen smaakversterkers', 13.5);
-insert into products (id, name, description, code, price) values (10, 'jenever', 'Jenever is een gedestileerede derank die wordt gemaakt uit moutwijn waaraan jeneverbessen zijn toegevoegd. Het is fris bitter en licht kruidig', '693155505-7', 13.5);
+insert into products (id, name, description, code, price, soort_id) values (1, 'malibu', 'Malibu is een kokosdrank waaraan suikerriet melasse is toegevoegd', '816905633-0', 10.5, 4 );
+insert into products (id, name, description, code, price, soort_id) values (2, 'whiskey', 'Whiskey is een gedistilleerd bier zonder hop, het heeft een smaak van geroosterd hout of karamel', '077030122-3', 11, 2);
+insert into products (id, name, description, code, price, soort_id) values (3, 'port', 'Port is een zoete en versterkte wijn uit portugal, en het komt in verscillende smaken zoals: frambozen, bramen, karamel, etc.', '445924201-X', 13.5, 3);
+insert into products (id, name, description, code, price, soort_id) values (4, 'cognac', 'Cognac wordt gemaakt uit witte wijn en komt met verschillende smaken. Het kan droog, zoet, kruidig, fruitig en bitter zijn', '693155505-7', 13.5, 1);
+insert into products (id, name, description, code, price, soort_id) values (5, 'calvados', 'Door het destilleren van appelcider ontstaat calvados. Het smaakt naar appels of peren', '686928463-6', 14, 2);
+insert into products (id, name, description, code, price, soort_id) values (6, 'rum', 'Rum is een sterke drank die ontstaat uit melasse of suikerrietsiroop. Het heeft een zoete smaak afhankelijk welke soort je koopt', '492662523-7', 14, 5);
+insert into products (id, name, description, code, price, soort_id) values (7, 'ouzo', 'Ouzo heeft een sterke mix van heerlijke vruchten met kruiden en noten. Het heeft een anijssmaak met druivenresten onderop', '816905633-0', 10.5, 1);
+insert into products (id, name, description, code, price, soort_id) values (8, 'gin', 'Gin is een gedestilleerde drank die afstamt van jenever. Het smaakt naar jeneverbes, dennennaalden en citroen, meestal is het zoet', '077030122-3', 11, 3);
+insert into products (id, name, description, code, price, soort_id) values (9, 'limoncello', 'Limoncello is een italiaanse drank en wordt gemaakt met citroen. Het is fris, zuur en zoet en heeft geen smaakversterkers', '445924201-X' 14, 1);
+insert into products (id, name, description, code, price, soort_id) values (10, 'jenever', 'Jenever is een gedestileerede derank die wordt gemaakt uit moutwijn waaraan jeneverbessen zijn toegevoegd. Het is fris bitter en licht kruidig', '693155505-7', 14, 3);
 
 CREATE TABLE persons (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
-  name INTEGER,
-  persons
+  name TEXT
 );
 
 insert into persons (id, name) values (1, 'jeroen');
@@ -53,7 +53,7 @@ CREATE TABLE revieuws (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   product_id INTEGER,
   persons_id INTEGER,
-  revieuws
+  revieuws TEXT
 );
 
 insert into revieuws (product_id, persons_id, revieuws) values (1, 2, 'nice');
@@ -97,49 +97,14 @@ insert into revieuws (product_id, persons_id, revieuws) values (10, 8, "pretty")
 insert into revieuws (product_id, persons_id, revieuws) values (7, 7, "god damn");
 insert into revieuws (product_id, persons_id, revieuws) values (2, 6, "amazing");
 
-
-CREATE TABLE likeur (
+CREATE TABLE soort (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
-  name VARCHAR (255),
+  soort_name VARCHAR (255),
   soort_drank TEXT
 );
 
-insert into likeur (id, name, soort_drank) values (4, 'cognac', "likeur");
-insert into likeur (id, name, soort_drank) values (7, 'ouzo', "likeur");
-insert into likeur (id, name, soort_drank) values (9, 'limoncello', "likeur");
-
-
-CREATE TABLE gedestillerde_drank (
-  id INTEGER PRIMARY KEY AUTOINCREMENT,
-  name VARCHAR (255),
-  soort_drank TEXT
-);
-
-insert into gedestillerde_drank (id, name, soort_drank) values (3, 'port', "gedestillerde drank");
-insert into gedestillerde_drank (id, name, soort_drank) values (8, 'gin', "gedestillerde drank");
-insert into gedestillerde_drank (id, name, soort_drank) values (10, 'jenever', "gedestillerde drank");
-
-CREATE TABLE cider (
-  id INTEGER PRIMARY KEY AUTOINCREMENT,
-  name VARCHAR (255),
-  soort_drank TEXT
-);
-
-insert into cider (id, name, soort_drank) values (1, 'malibu', "cider");
-
-CREATE TABLE brandewijn (
-  id INTEGER PRIMARY KEY AUTOINCREMENT,
-  name VARCHAR (255),
-  soort_drank TEXT
-);
-
-insert into brandewijn (id, name, soort_drank) values (2, 'whiskey', "brandewijn");
-insert into brandewijn (id, name, soort_drank) values (5, 'calvados', 'brandewijn') ;
-
-CREATE TABLE suiker_drank (
-  id INTEGER PRIMARY KEY AUTOINCREMENT,
-  name VARCHAR (255),
-  soort_drank TEXT
-);
-
-insert into suiker_drank (id, name, soort_drank) values (6, "rum", "suiker drank")
+insert "likeur", "dit is heel lekker voor 18+"
+insert "brandewijn", "dit is meer voor opa en oma"
+insert "gedestileerde drank", "ouders vinden dit in het weekend lekker"
+insert "cider", "gewild bij feestjes onder jongeren"
+insert "suiker drank", "ouderen vinden dit lekkerop een late avond"
