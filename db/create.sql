@@ -57,7 +57,7 @@ insert into persons (name) values ('lars');
 insert into persons (name) values ('mark');
 insert into persons (name) values ('sigrid kaag');
 insert into persons (name) values ('daan');
-insert into persons (name) values ("kooskabouter");
+insert into persons (name) values ('kooskabouter');
 insert into persons (name) values ('bananenliefhebber');
 insert into persons (name) values ('godzilla');
 insert into persons (name) values ('joost');
