@@ -10,7 +10,7 @@ CREATE TABLE products (
   description TEXT,
   price NUMERIC (10,2),
   soort_id INTEGER,
-  ML_id INTEGER
+  ML INTEGER
 );
 
 CREATE TABLE persons (
@@ -38,16 +38,16 @@ CREATE TABLE ML (
 
 
 --products
-insert into products (name, description, code, price, soort_id, ML_id) values ('malibu', 'Malibu is een kokosdrank waaraan suikerriet melasse is toegevoegd', '816905633-0', 10.5, 4, 2);
-insert into products (name, description, code, price, soort_id, ML_id) values ('whiskey', 'Whiskey is een gedistilleerd bier zonder hop, het heeft een smaak van geroosterd hout of karamel', '077030122-3', 11, 2, 3);
-insert into products (name, description, code, price, soort_id, ML_id) values ('port', 'Port is een zoete en versterkte wijn uit portugal, en het komt in verscillende smaken zoals: frambozen, bramen, karamel, etc.', '445924201-X', 13.5, 3, 2);
-insert into products (name, description, code, price, soort_id, ML_id) values ('cognac', 'Cognac wordt gemaakt uit witte wijn en komt met verschillende smaken. Het kan droog, zoet, kruidig, fruitig en bitter zijn', '693155505-7', 13.5, 1, 1);
-insert into products (name, description, code, price, soort_id, ML_id) values ('calvados', 'Door het destilleren van appelcider ontstaat calvados. Het smaakt naar appels of peren', '686928463-6', 14, 2, 1);
-insert into products (name, description, code, price, soort_id, ML_id) values ('rum', 'Rum is een sterke drank die ontstaat uit melasse of suikerrietsiroop. Het heeft een zoete smaak afhankelijk welke soort je koopt', '492662523-7', 14, 5, 2);
-insert into products (name, description, code, price, soort_id, ML_id) values ('ouzo', 'Ouzo heeft een sterke mix van heerlijke vruchten met kruiden en noten. Het heeft een anijssmaak met druivenresten onderop', '816905633-0', 10.5, 1, 2);
-insert into products (name, description, code, price, soort_id, ML_id) values ('gin', 'Gin is een gedestilleerde drank die afstamt van jenever. Het smaakt naar jeneverbes, dennennaalden en citroen, meestal is het zoet', '077030122-3', 11, 3, 1);
-insert into products (name, description, code, price, soort_id, ML_id) values ('limoncello', 'Limoncello is een italiaanse drank en wordt gemaakt met citroen. Het is fris, zuur en zoet en heeft geen smaakversterkers', '445924201-X', 14, 1, 1);
-insert into products (name, description, code, price, soort_id, ML_id) values ('jenever', 'Jenever is een gedestileerede derank die wordt gemaakt uit moutwijn waaraan jeneverbessen zijn toegevoegd. Het is fris bitter en licht kruidig', '693155505-7', 14, 3, 1);
+insert into products (name, description, code, price, soort_id, ML) values ('malibu', 'Malibu is een kokosdrank waaraan suikerriet melasse is toegevoegd', '816905633-0', 10.5, 4, 750);
+insert into products (name, description, code, price, soort_id, ML) values ('whiskey', 'Whiskey is een gedistilleerd bier zonder hop, het heeft een smaak van geroosterd hout of karamel', '077030122-3', 11, 2, 1000);
+insert into products (name, description, code, price, soort_id, ML) values ('port', 'Port is een zoete en versterkte wijn uit portugal, en het komt in verscillende smaken zoals: frambozen, bramen, karamel, etc.', '445924201-X', 13.5, 3, 750);
+insert into products (name, description, code, price, soort_id, ML) values ('cognac', 'Cognac wordt gemaakt uit witte wijn en komt met verschillende smaken. Het kan droog, zoet, kruidig, fruitig en bitter zijn', '693155505-7', 13.5, 1, 500);
+insert into products (name, description, code, price, soort_id, ML) values ('calvados', 'Door het destilleren van appelcider ontstaat calvados. Het smaakt naar appels of peren', '686928463-6', 14, 2, 500);
+insert into products (name, description, code, price, soort_id, ML) values ('rum', 'Rum is een sterke drank die ontstaat uit melasse of suikerrietsiroop. Het heeft een zoete smaak afhankelijk welke soort je koopt', '492662523-7', 14, 5, 750);
+insert into products (name, description, code, price, soort_id, ML) values ('ouzo', 'Ouzo heeft een sterke mix van heerlijke vruchten met kruiden en noten. Het heeft een anijssmaak met druivenresten onderop', '816905633-0', 10.5, 1, 750);
+insert into products (name, description, code, price, soort_id, ML) values ('gin', 'Gin is een gedestilleerde drank die afstamt van jenever. Het smaakt naar jeneverbes, dennennaalden en citroen, meestal is het zoet', '077030122-3', 11, 3, 500);
+insert into products (name, description, code, price, soort_id, ML) values ('limoncello', 'Limoncello is een italiaanse drank en wordt gemaakt met citroen. Het is fris, zuur en zoet en heeft geen smaakversterkers', '445924201-X', 14, 1, 500);
+insert into products (name, description, code, price, soort_id, ML) values ('jenever', 'Jenever is een gedestileerede derank die wordt gemaakt uit moutwijn waaraan jeneverbessen zijn toegevoegd. Het is fris bitter en licht kruidig', '693155505-7', 14, 3, 500);
 
 
 --persons
