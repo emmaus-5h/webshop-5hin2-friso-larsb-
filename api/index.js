@@ -1,17 +1,10 @@
-// database setup, we use better-sqlite3 because it is basic
-// for advanced documentation see 
-// https://www.npmjs.com/package/better-sqlite3
 const Database = require('better-sqlite3');
-// all sql-statements will be sent to console for debug purpose
-const db = new Database('../db/my.db', { verbose: console.log });
-// onze code negeert errors in sql-commando's maar de database drukt errors af op de console
 
-// server, we use express because that is the most common package
-// for advanced documentation see 
-// see https://expressjs.com 
+const db = new Database('../db/my.db', { verbose: console.log });
+
 const express = require('express')
 const app = express()
-const port = 8080; // standard port for https
+const port = 8080; 
 
 const bodyParser = require('body-parser')
 app.use(bodyParser.json())
@@ -197,17 +190,14 @@ function checkoutOrder(request, response) {
     `Email: ${email || '-'}<br>\n` +
     `Telefoon: ${phone || '-'}<br>\n` +
     articleTable +
-    //`productIds: ${productIds || '-'}<br>\n` + 
-    //`productAmounts: ${productAmounts || '-'}<br>\n` + 
+ 
     `groet,<br><br>\n\nShop Mailer\n</body></html>`
 
 
   // check mailconfig en verstuur mail
   if (mailConfigOK()) {
     sendMail('Bevestiging van bestelling', body, email)
-    // note: mailer is async, so technically it has not been send yet 
-    // if an error occurs during sending of the mail, 
-    // the user gets an okee, but the error is dumped in console.log
+  
     response.status(200).send({ orderId })
   } else {
     const errorMessage = "Error: environment variables GMAIL_EMAIL, GMAIL_PASSWORD or ORDER_MAIL_TO not configured"
@@ -217,9 +207,7 @@ function checkoutOrder(request, response) {
 
 }
 
-// --------------------------
-// sent mail hulp onderdelen
-// --------------------------
+
 
 var nodemailer = require('nodemailer'); // laad module voor versturen van email
 
@@ -249,12 +237,7 @@ function sendMail(subject, body, recipent) {
     }
   });
 
-  // controlleer de connnectie met gmail
-  // zie console.log voor errors
-  // veelvoorkomende oorzaken van errors: 
-  // - verkeerd wachtwoord/inlognaam, 
-  // - less secure apps niet toegestaan in google (oplossing: pas setting in je gmail aan), 
-  // - 2fa aangezet in google maar geen apppassword gebruikt (oplossing: maak app specifiek wachtwoord in je gmail)
+  
   transporter.verify(function (error, success) {
     if (error) {
       console.log(error);
