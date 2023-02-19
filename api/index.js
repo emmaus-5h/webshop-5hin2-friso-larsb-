@@ -22,11 +22,6 @@ app.get('/api/echo', echoRequest)
 app.get('/api/categories', getCategories)
 app.get('/api/products', getProducts)
 app.get('/api/products/:id', getProductById)
-//app.get('/api/products/:id/related', db.getRelatedProductsById)
-// our API is not protected...so let's not expose these
-// app.post('/api/products', createProduct)
-// app.put('/api/products/:id', updateProduct)
-// app.delete('/api/products/:id', deleteProduct)
 app.post('/api/checkout', checkoutOrder)
 
 // start de server!
@@ -76,68 +71,6 @@ function getProductById(request, response) {
   data = sqlOpdracht.all(product_id)
   response.status(200).json(data[0])
 }
-
-/*
-const getRelatedProductsById = (request, response) => {
-  const id = parseInt(request.params.id)
-  // TODO: change query to return related products
-  // it now return an array with the current products
-  pool.query('SELECT * FROM products WHERE id = $1', [id], (error, results) => {
-    if (error) {
-      console.log(error)
-      response.status(500).json("oops")
-    } else {
-      response.status(200).json(results.rows)
-    }
-  })
-}
-
-const createProduct = (request, response) => {
-  const { name, email } = request.body
-
-  pool.query('INSERT INTO products (name, email) VALUES ($1, $2)', [name, email], (error, _results) => {
-    if (error) {
-      console.log(error)
-      response.status(500).json("oops")
-    } else {
-      response.status(201).json(`Product added with ID: ${result.insertId}`)
-    }
-  })
-}
-
-const updateProduct = (request, response) => {
-  const id = parseInt(request.params.id)
-  const { name, email } = request.body
-
-  // Note: query is not correct
-  pool.query(
-    'UPDATE products SET name = $1, email = $2 WHERE id = $3',
-    [name, email, id],
-    (error, _results) => {
-      if (error) {
-        console.log(error)
-        response.status(500).json("oops")
-      } else {
-        response.status(200).send(`Product modified with ID: ${id}`)
-      }
-    }
-  )
-}
-
-const deleteProduct = (request, response) => {
-  const id = parseInt(request.params.id)
-
-  pool.query('DELETE FROM products WHERE id = $1', [id], (error, _results) => {
-    if (error) {
-      console.log(error)
-      response.status(500).json("oops")
-    } else {
-      response.status(200).send(`Product deleted with ID: ${id}`)
-    }
-  })
-}
-*/
-
 
 // ---------------------------------
 // email bestelling
